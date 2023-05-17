@@ -1,0 +1,14 @@
+[
+  {
+    "id": 12345,
+    "name": "Carrito de prueba"
+  },
+  {
+    "id": 54321,
+    "name": "Carrito de prueba 2"
+  },
+  {
+    "id": 2350551700,
+    "products": []
+  }
+]

@@ -1,13 +1,23 @@
 [
   {
+    "title": "Update de prueba",
+    "description": "Producto de prueba , para el metodo update product",
+    "price": 35000,
+    "thumbnail": "...............................",
+    "code": "46581",
+    "stock": 30,
+    "status": true,
+    "id": 2418872344
+  },
+  {
     "title": "Catan",
     "description": "Juego de mesa , Catan",
     "price": 25000,
     "thumbnail": "https://devirinvestments.s3.eu-west-1.amazonaws.com/img/catalog/product/8436017220100-1200-face3d.jpg",
     "code": "1827",
     "stock": 15,
-    "id": 1,
-    "status": true
+    "status": true,
+    "id": 2125946993
   },
   {
     "title": "Monopoly",
@@ -16,8 +26,8 @@
     "thumbnail": "https://falabella.scene7.com/is/image/Falabella/5934112_1?wid=800&hei=800&qlt=70",
     "code": "2458",
     "stock": 15,
-    "id": 2,
-    "status": true
+    "status": true,
+    "id": 2093120887
   },
   {
     "title": "Exploding Kittens",
@@ -26,8 +36,8 @@
     "thumbnail": "https://m.media-amazon.com/images/I/710D3AP+ipL.jpg",
     "code": "8572",
     "stock": 15,
-    "id": 3,
-    "status": true
+    "status": true,
+    "id": 1371281532
   },
   {
     "title": "UNO",
@@ -36,8 +46,8 @@
     "thumbnail": "https://dojiw2m9tvv09.cloudfront.net/10102/product/unoclasico-14328.jpg",
     "code": "5782",
     "stock": 15,
-    "id": 4,
-    "status": true
+    "status": true,
+    "id": 602732284
   },
   {
     "title": "Clue",
@@ -46,8 +56,8 @@
     "thumbnail": "https://www.paris.cl/dw/image/v2/BCHW_PRD/on/demandware.static/-/Sites-cencosud-master-catalog/default/dwcde6c150/images/imagenes-productos/649/209150-0000-001.jpg?sw=513&sh=654&sm=fit",
     "code": "1537",
     "stock": 15,
-    "id": 5,
-    "status": true
+    "status": true,
+    "id": 3077784790
   },
   {
     "title": "Magic",
@@ -56,8 +66,8 @@
     "thumbnail": "..........",
     "code": "6485",
     "stock": 12,
-    "id": 6,
-    "status": true
+    "status": true,
+    "id": 869440492
   },
   {
     "title": "Yu Gi Oh",
@@ -66,8 +76,8 @@
     "thumbnail": "..........",
     "code": "9831",
     "stock": 18,
-    "id": 7,
-    "status": true
+    "status": true,
+    "id": 3825673101
   },
   {
     "title": "Mala Leche",
@@ -76,8 +86,8 @@
     "thumbnail": "..........",
     "code": "4695",
     "stock": 15,
-    "id": 8,
-    "status": true
+    "status": true,
+    "id": 1361153853
   },
   {
     "title": "Domino",
@@ -86,8 +96,8 @@
     "thumbnail": "..........",
     "code": "5583",
     "stock": 15,
-    "id": 9,
-    "status": true
+    "status": true,
+    "id": 1729244648
   },
   {
     "title": "Pictionary",
@@ -96,7 +106,17 @@
     "thumbnail": "..........",
     "code": "7957",
     "stock": 15,
-    "id": 10,
-    "status": true
+    "status": true,
+    "id": 4250431057
+  },
+  {
+    "title": "Producto de Prueba",
+    "description": "Producto de prueba , para metodo add new product",
+    "price": 25000,
+    "thumbnail": "..........",
+    "code": "46582",
+    "stock": 15,
+    "status": true,
+    "id": 262136371
   }
 ]

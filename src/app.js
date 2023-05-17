@@ -19,37 +19,6 @@ app.use("/api/products", productsRouter)
 app.use("/api/carts", cartRouter)
 
 
-// app.get("/api/products",async (req, res) => {
-
-//     try{
-//         const limit = req.query.limit
-//         const products = await container.getProducts()
-//         if(limit <= 10){
-//             res.status(200).json(products.slice(0, limit))
-//         }else if(limit >= 11 || limit <= 0){
-//             res.status(200).json({message: 'Error , the limit is out of range (1 to 10)'})
-//         }else{
-//             res.status(200).json(products)
-//         }
-//     }catch(error){
-//         res.status(404).json({message: 'We have an error'})
-//     }
-    
-// })
-
-
-
-// app.post("/products" , async (req,res) => {
-//     try{
-//         const product = req.body
-//         products.push({
-
-//         })
-//     }catch(error){
-//         res.status(404).json({error:'We have an error'})
-//     }
-// })
-
 
 app.listen(port, () => {
     console.log(`Server listening on PORT 8080 http://localhost:${port}`)

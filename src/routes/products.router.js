@@ -10,13 +10,15 @@ productsRouter.get("/",async (req, res) => {
     try{
         const limit = req.query.limit
         const products = await container.getProducts()
-        if(limit <= 10){
-            res.status(200).json(products.slice(0, limit))
-        }else if(limit >= 11 || limit <= 0){
-            res.status(404).json({message: 'Error , the limit is out of range (1 to 10)'})
+        if(limit >= 1){
+            res.status(200).json({
+                status: "success",
+                data: products.slice(0, limit)
+            })
         }else{
-            res.status(200).json(products)
+            res.status(404).json({message: 'Error , the limit is out of range'})
         }
+
     }catch(error){
         res.status(404).json({msg:'Internal Error'})
     }
@@ -35,7 +37,7 @@ productsRouter.get("/:pid",async (req,res) => {
     }catch(error){
         res.status(500).json({
             status: "error",
-            msg:'Internal Error',
+            msg:'Product not found, try with a valid id',
         })
     }
     
@@ -43,34 +45,60 @@ productsRouter.get("/:pid",async (req,res) => {
 
 productsRouter.post("/", async (req, res) => {
     try{
-        const data = await container.getProducts()
-        let newProduct = req.body;
-        let findCode = (data.find((ele) => ele.code === newProduct.code))
-        if (findCode) {
-            return res.status(400).json({
-                status: "Error",
-                msg: "Error. A product with the same code you are trying to save already exists. Please try again"
-            })
-        }
-        const requiredField = ['title', 'desc', 'code', 'price', 'stock', 'category']
-        const hasAllFields = requiredField.every(prop => newProduct[prop]);
-        if (hasAllFields) {
-            await container.addProduct({ ...newProduct, status: true })
+        const data  = req.body
+        const newProduct = await container.addProduct(data)
+        if(newProduct){
             return res.status(201).json({
-                status: "Success",
-                msg: "product saved",
-                data: newProduct
-            })
-        } else {
-            return res.status(409).json({
-                status: "Error",
-                msg: "An error occurred while trying to save the product. Check that all required fields are filled out and you are not manually giving an id"
-            })
-        }
+                status: "success",
+                msg: "Product added successfully",
+                payload: newProduct,
+            })       
+        }else{
+
+        
+        res.status(400).json({
+            status: "error",
+            msg:'Error adding product or code duplicated',
+        })}
     }catch(error){
          res.status(500).json({
             status: "error",
             msg:'Internal Error',
+        })
+    }
+})
+
+productsRouter.put("/:pid", async (req,res) => {
+    const id = parseInt(req.params.pid)
+    const update = req.body
+    try{
+        const productUpdate = await container.updateProduct(id, update)
+        res.status(200).json({
+            status: "success",
+            msg: "Product updated successfully",
+            data: productUpdate})
+    }catch(error){
+        res.status(400).json({
+            status: "error",
+            msg:'The product whit that id , dont exist ',
+        })
+    }
+})
+
+productsRouter.delete("/:pid", async (req,res) => {
+    const id = parseInt(req.params.pid)
+    try{
+        const productDeleted = await container.deleteProduct(id)
+        res.status(200).json({
+            status: "success",
+            msg:'Product deleted successfully',
+            data: productDeleted,
+
+        })
+    }catch(error){
+        res.status(400).json({
+            status: "error",
+            msg:'An error occurred while deleting the product',
         })
     }
 })
