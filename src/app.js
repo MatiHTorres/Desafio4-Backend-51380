@@ -1,11 +1,8 @@
 import express from 'express';
-import ProductManager from './productManager.js';
+
 import { productsRouter} from './routes/products.router.js'
 import { cartRouter } from './routes/carts.router.js';
 
-// const ProductManager = require('./tercerDesafio') commonjs
-
-const container = new ProductManager("./src/products.json");
 
 const app = express();
 const port = 8080;
